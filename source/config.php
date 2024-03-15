@@ -5,7 +5,7 @@
     define('DB_PASS','');
     define('DB_NAME','academy');
 
-    define('BASE_URL', 'https://localhost/minha_pasta/academy_project/');
+    define('BASE_URL', 'http://localhost/minha_pasta/academy_project/source');
 
     define('NOME_PROJETO', 'Cururuquara Academy');
     define('DEBUG_MODE', true);
