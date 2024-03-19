@@ -27,24 +27,34 @@
             // Evento de clique no botão "Cadastro de Clientes"
             $("#btn-cadastro").click(function() {
                 // Fazer requisição AJAX para o controlador correspondente
+                var url = 'https://localhost/minha_pasta/academy_project/source/view/'
                 $.ajax({
-                    url: "cad-controller.php?action=cadClientes",
+                    url: url+'formCad-view.php',
                     success: function(response) {
                         // Atualizar o conteúdo da página com a resposta do controlador
                         $("body").html(response);
-                    }
+                    },
+                    erro: function(erro){
+        				console.log("Erro na requisição AJAX: formCad-view.php");
+        				console.log(erro);
+        			}
                 });
             });
 
             // Evento de clique no botão "Consulta de Clientes"
             $("#btn-consulta").click(function() {
                 // Fazer requisição AJAX para o controlador correspondente
+                var url = 'https://localhost/minha_pasta/academy_project/source/view/'
                 $.ajax({
-                    url: "cad-controller.php?action=listarClientes",
+                    url: url+'listCad-view.php',
                     success: function(response) {
                         // Atualizar o conteúdo da página com a resposta do controlador
                         $("body").html(response);
-                    }
+                    },
+        			erro: function(erro){
+        				console.log("Erro na requisição AJAX: listCad-view.php");
+        				console.log(erro);
+        			}
                 });
             });
         });

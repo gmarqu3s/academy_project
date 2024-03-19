@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="academy_project/view">Home</a>
+            <a id="pag_ini" class="nav-link active" aria-current="page" >Home</a>
         </ul>
         </div>
     </div>
@@ -55,7 +55,26 @@
         </tbody>
     </table>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).load(function () {
+            $("#pag_ini").click(function () {
+                var url = 'https://localhost/minha_pasta/academy_project/source/view'
+                $.ajax({
+                    url: url,
+                    success: function(response) {
+                        $("body").html(response);
+                    }
+                    // erro: function(){
+        			// 	console.log("Erro na requisição AJAX: retornar a pagagina inicial");
+        			// 	console.log(erro);
+        			// }
+                })
+            })
+        })
+    
+    </script>
+
 </body>
 </html>
